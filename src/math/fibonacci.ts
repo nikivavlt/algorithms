@@ -1,4 +1,4 @@
-export function recursiveFibonacci(index: number): number {
+function validateIndex(index: number): void {
     if (!Number.isInteger(index)) {
         throw new Error('Index must be an integer');
     }
@@ -6,6 +6,10 @@ export function recursiveFibonacci(index: number): number {
     if (index < 0) {
         throw new Error('Index must be non-negative');
     }
+}
+
+export function recursiveFibonacci(index: number): number {
+    validateIndex(index);
 
     if (index < 2) return index;
 
@@ -13,13 +17,7 @@ export function recursiveFibonacci(index: number): number {
 }
 
 export function iterativeFibonacci(index: number): number {
-    if (!Number.isInteger(index)) {
-        throw new Error('Index must be an integer');
-    }
-    
-    if (index < 0) {
-        throw new Error('Index must be non-negative');
-    }
+    validateIndex(index);
 
     if (index < 2) return index;
 
