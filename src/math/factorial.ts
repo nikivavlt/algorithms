@@ -1,9 +1,9 @@
-function validateNumber(index: number): void {
-    if (!Number.isInteger(index)) {
+function validateNumber(n: number): void {
+    if (!Number.isInteger(n)) {
         throw new Error('Number must be an integer');
     }
     
-    if (index < 0) {
+    if (n < 0) {
         throw new Error('Number must be non-negative');
     }
 }
